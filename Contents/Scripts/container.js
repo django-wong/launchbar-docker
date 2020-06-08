@@ -412,7 +412,10 @@ function extrac_compose_info(labels) {
 	const working_dir = labels['com.docker.compose.project.working_dir'];
 	const compose = labels['com.docker.compose.project.config_files'];
 
-	const compose_file = working_dir + '/' + compose;
+	let compose_file = working_dir + '/' + compose;
+	if (compose.indexOf('/') === 0) {
+		compose_file = compose;
+	}
 
 	items.push({
 		label: 'Docker Compose File',
