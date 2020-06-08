@@ -96,7 +96,7 @@ function execute(options) {
 		'/bin/bash', '-c', command, '2>&1'
 	);
 
-	if (!options.formater) return result || 'Fail to execure the command';
+	if (!options.formater) return result || 'No Output';
 
 	// Invoke another action to review the ouptut
 	return view_command_result(result, options.formater);
