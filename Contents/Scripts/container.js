@@ -350,6 +350,26 @@ function show_container_actions(container) {
 		},
 	});
 
+	items.push({
+		title: 'Run a command in a running container',
+		label: 'exec',
+		actionReturnsItems: true,
+		icon: ICONS.EXEC,
+		action: 'execute',
+		actionArgument: {
+			run_in_terminal: true,
+			command: 'exec',
+			options: ['-it'],
+			bin: BIN_DOCKER,
+			target: container.ID,
+			need_confirm: true,
+			executable: '/bin/bash',
+			variants: [
+				{description: 'Sh to this container', executable: '/bin/sh'}
+			]
+		}
+	});
+
 	return items;
 }
 

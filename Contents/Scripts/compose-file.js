@@ -214,7 +214,7 @@ function show_service_actions(file) {
 		actionArgument: {
 			required: true,
 			need_confirm: true,
-			command: 'execute',
+			command: 'exec',
 			file,
 			executable: '/bin/bash',
 			run_in_terminal: true,
