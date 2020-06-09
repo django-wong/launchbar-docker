@@ -2,7 +2,7 @@ A LaunchBar action to interactive with Docker
 
 ---
 
-![https://raw.githubusercontent.com/django-wong/launchbar-docker/master/Contents/Resources/demo.png](https://raw.githubusercontent.com/django-wong/launchbar-docker/master/Contents/Resources/demo.png)
+![https://raw.githubusercontent.com/django-wong/launchbar-docker/master/Contents/Resources/demo.gif](https://raw.githubusercontent.com/django-wong/launchbar-docker/master/Contents/Resources/demo.gif)
 
 #### Install
 
