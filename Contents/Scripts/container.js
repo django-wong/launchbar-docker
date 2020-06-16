@@ -165,7 +165,7 @@ function show_container_actions(container) {
 	// attach
 	items.push({
 		title: 'Attach local standard input, output, and error streams to a running container',
-		label: 'attach',
+		badge: 'attach',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -182,7 +182,7 @@ function show_container_actions(container) {
 	// kill
 	items.push({
 		title: 'Kill one or more running containers',
-		label: 'kill',
+		badge: 'kill',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -198,7 +198,7 @@ function show_container_actions(container) {
 	// pause
 	items.push({
 		title: 'Pause all processes within one or more containers',
-		label: 'pause',
+		badge: 'pause',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -214,7 +214,7 @@ function show_container_actions(container) {
 	// start
 	items.push({
 		title: 'Start one or more stopped containers',
-		label: 'start',
+		badge: 'start',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -236,7 +236,7 @@ function show_container_actions(container) {
 	// stop
 	items.push({
 		title: 'Stop one or more running containers',
-		label: 'stop',
+		badge: 'stop',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -252,7 +252,7 @@ function show_container_actions(container) {
 	// top
 	items.push({
 		title: 'Display the running processes of a container',
-		label: 'top',
+		badge: 'top',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -267,7 +267,7 @@ function show_container_actions(container) {
 	// logs
 	items.push({
 		title: 'Fetch the last 100 line of logs of a container',
-		label: 'logs',
+		badge: 'logs',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -276,14 +276,17 @@ function show_container_actions(container) {
 			bin: BIN_DOCKER,
 			operation: 'logs',
 			target: container.ID,
-			options: ['--tail', '100']
+			options: ['--tail', '100'],
+			variants: [
+				{description: 'Follow log output', options: ['-f']}
+			]
 		},
 	});
 
 	// stats
 	items.push({
 		title: 'Display container(s) resource usage statistics',
-		label: 'stats',
+		badge: 'stats',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -308,7 +311,7 @@ function show_container_actions(container) {
 	// rm
 	items.push({
 		title: 'Remove one or more containers',
-		label: 'rm',
+		badge: 'rm',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -337,7 +340,7 @@ function show_container_actions(container) {
 	// unpause
 	items.push({
 		title: 'Unpause all processes within the containers',
-		label: 'unpause',
+		badge: 'unpause',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',
@@ -352,7 +355,7 @@ function show_container_actions(container) {
 
 	items.push({
 		title: 'Run a command in a running container',
-		label: 'exec',
+		badge: 'exec',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC,
 		action: 'execute',

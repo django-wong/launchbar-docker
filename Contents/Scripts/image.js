@@ -95,7 +95,7 @@ function show_image_actions(image) {
 		actionReturnsItems: true,
 		action: 'execute',
 		title: 'Remove the selected image',
-		label: 'rm',
+		badge: 'rm',
 		actionArgument: {
 			need_confirm: true,
 			target: image.ID,
@@ -111,7 +111,7 @@ function show_image_actions(image) {
 	items.push({
 		actionReturnsItems: true,
 		action: 'execute',
-		label: 'pull',
+		badge: 'pull',
 		title: 'Pull an image from the registry',
 		actionArgument: {
 			need_confirm: true,
@@ -126,7 +126,7 @@ function show_image_actions(image) {
 	items.push({
 		actionReturnsItems: true,
 		action: 'execute',
-		label: 'push',
+		badge: 'push',
 		title: 'Push an image to a registry',
 		actionArgument: {
 			need_confirm: true,
@@ -141,7 +141,7 @@ function show_image_actions(image) {
 	items.push({
 		actionArgument: image,
 		action: 'save_image',
-		label: '(take a while to) save',
+		badge: '(take a while to) save',
 		title: 'Save image to a tar archive',
 		actionReturnsItems: true,
 		icon: ICONS.EXEC
@@ -160,7 +160,7 @@ function show_image_actions(image) {
 			formater: 'view_image_history_output'
 		},
 		icon: ICONS.EXEC,
-		label: 'history',
+		badge: 'history',
 	})
 
 	return items;
