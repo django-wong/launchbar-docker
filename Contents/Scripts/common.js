@@ -25,15 +25,22 @@ const NO_IMAGE_WAS_FOUND_FOR_SERVICE = {
 const ALL_IMAGES = {
 	actionReturnsItems: true,
 	title: 'All Images',
-	icon: ICONS.GO,
+	icon: ICONS.IMAGE,
 	action: 'list_images',
 };
 
 const ALL_CONTAINERS = {
 	actionReturnsItems: true,
 	title: 'All Containers',
-	icon: ICONS.GO,
+	icon: ICONS.CONTAINER,
 	action: 'list_containers',
+};
+
+const ALL_VOLUMES = {
+	actionReturnsItems: true,
+	title: 'All Volumes',
+	icon: ICONS.VOLUME,
+	action: 'list_volumes',
 }
 
 /**

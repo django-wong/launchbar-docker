@@ -24,7 +24,7 @@ function run(input = '') {
 		items.push(...list_images(input));
 	} else {
 		items.push(...list_containers('', true));
-		items.push(ALL_CONTAINERS, ALL_IMAGES);
+		items.push(ALL_CONTAINERS, ALL_IMAGES, ALL_VOLUMES);
 	}
 
 	if (items.length < 1) {

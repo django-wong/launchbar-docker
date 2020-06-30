@@ -27,5 +27,6 @@ const ICONS = {
 	STOP: 'icons8-stop-100.png',
 	TRASH: 'icons8-trash-can-100.png',
 	ALL: 'icons8-select-all-100.png',
-	GO: 'icons8-circled-up-right-100.png'
+	GO: 'icons8-circled-up-right-100.png',
+	PATH: 'icons8-symlink-directory-80.png',
 }
