@@ -28,8 +28,12 @@ function run(input = '') {
 	}
 
 	if (items.length < 1) {
-		return NO_ITEM;
+		items.push(NO_ITEMS);
 	}
 
 	return items;
+}
+
+function runWithPaths(paths = []) {
+	return use_compose_files(paths);
 }

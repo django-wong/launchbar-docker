@@ -43,6 +43,11 @@ const ALL_VOLUMES = {
 	action: 'list_volumes',
 }
 
+const NO_ITEMS = {
+	title: 'No Data',
+	icon: ICONS.BAD,
+}
+
 /**
  * Filter projects by
  *

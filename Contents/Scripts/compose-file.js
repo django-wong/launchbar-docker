@@ -232,7 +232,7 @@ function show_service_actions(file) {
 			need_confirm: true,
 			command: 'images',
 			file,
-			formater: 'listServiceImages'
+			formater: 'list_service_images'
 		}
 	});
 
@@ -516,7 +516,7 @@ function choose_service_to_execute(options) {
  *     action: 'findImages'
  * }>}
  */
-function listServiceImages(content) {
+function list_service_images(content) {
 	content = (content || '').trim();
 
 	if (!content) {
@@ -547,4 +547,37 @@ function listServiceImages(content) {
 		action: 'list_images',
 		actionArgument: item.repo
 	}))
+}
+
+/**
+ * Let user to choose which docker-compose file to use
+ *
+ * @param      {stringp[]}  [paths=[]]  The paths
+ * @return     {Array}
+ */
+function use_compose_files(paths = []) {
+
+	if (paths.length === 1) {
+		if (is_valid_compose_file(paths[0])) {
+			return list_services(paths[0])
+		}
+	}
+
+	const items = paths.map(path => {
+		return {
+			action: 'list_services',
+			path,
+			title: path,
+			actionReturnsItems: true,
+			actionArgument: path,
+			icon: ICONS.COMPOSE
+		};
+	})
+
+	items.unshift({
+		title: 'Choose a file to continue',
+		icon: ICONS.QUESTION,
+	});
+
+	return items;
 }
