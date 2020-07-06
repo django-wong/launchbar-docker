@@ -28,12 +28,14 @@ function list_services_name(file) {
  */
 function list_services(file) {
 	if (!is_valid_compose_file(file)) return [INVALID_COMPOSE_FILE];
+
 	const options = {
 		command: 'ps',
 		options: ['-a'],
 		file: file
 	};
-	const result = (execute(options) || '').trim();
+
+	const result = execute(options) || '';
 
 	if (!result) {
 		return [];
