@@ -17,21 +17,29 @@ include('volume.js');
  * @return     {items}
  */
 function run(input = '') {
+	const more_options = [ALL_CONTAINERS, ALL_IMAGES, ALL_VOLUMES];
 	const items = [];
 
 	if (input) {
+		// List containers and images by keyword
 		items.push(...list_containers(input, false));
 		items.push(...list_images(input));
 	} else {
+		// List running containers
 		items.push(...list_containers('', true));
-		items.push(ALL_CONTAINERS, ALL_IMAGES, ALL_VOLUMES);
 	}
 
-	if (items.length < 1) {
-		items.push(NO_ITEMS);
+	if (items.length > 1) {
+		items.push({
+			title: 'More Options',
+			children: more_options,
+			icon: ICONS.MORE
+		});
+
+		return items;
 	}
 
-	return items;
+	return more_options;
 }
 
 function runWithPaths(paths = []) {

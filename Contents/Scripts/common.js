@@ -58,7 +58,10 @@ const NO_ITEMS = {
 function filter_by(filters = []) {
 	return function(object) {
         for (const filter of filters) {
-            if (object[filter.key].match(RegExp(filter.value || '.', 'i'))) return true;
+        	if (object[filter.key]) {
+	            if (object[filter.key].toString().match(new RegExp(filter.value || '.', 'i'))) return true;
+        	}
         }
+        return false;
 	}
 }

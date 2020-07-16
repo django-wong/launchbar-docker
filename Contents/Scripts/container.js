@@ -4,7 +4,7 @@
  * @return     {Array}
  */
 function list_containers(name = '', running_only = false) {
-	const options = ['--format', '{{json .}}', '--no-trunc'];
+	const options = ['--format', '{{json .}}', '--no-trunc', '-s'];
 
 	if (!running_only) {
 		options.unshift('-a');
