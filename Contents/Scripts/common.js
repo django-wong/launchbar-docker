@@ -59,7 +59,8 @@ function filter_by(filters = []) {
 	return function(object) {
         for (const filter of filters) {
         	if (object[filter.key]) {
-	            if (object[filter.key].toString().match(new RegExp(filter.value || '.', 'i'))) return true;
+        		const match = object[filter.key].toString().match(new RegExp(filter.value || '.', 'i'));
+	            if (match) return true;
         	}
         }
         return false;

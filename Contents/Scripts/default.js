@@ -29,7 +29,7 @@ function run(input = '') {
 		items.push(...list_containers('', true));
 	}
 
-	if (items.length > 1) {
+	if (items.length >= 1) {
 		items.push({
 			title: 'More Options',
 			children: more_options,
