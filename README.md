@@ -1,4 +1,4 @@
-A LaunchBar action to interactive with Docker
+A LaunchBar action to interact with Docker
 
 ---
 
